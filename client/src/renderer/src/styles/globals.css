@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+@theme {
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-surface-muted: #f4f4f5;
+  --color-surface-sunken: #fafafa;
+  --color-border: #e4e4e7;
+  --color-border-strong: #d4d4d8;
+  --color-fg: #09090b;
+  --color-fg-muted: #3f3f46;
+  --color-fg-subtle: #71717a;
+  --color-accent: #2563eb;
+  --color-accent-soft: rgba(37, 99, 235, 0.06);
+  
+  --color-tag-sage: #10b981;
+  --color-tag-coral: #f97316;
+  --color-tag-lavender: #8b5cf6;
+  --color-tag-sand: #eab308;
+
+  --font-serif: ui-serif, Georgia, 'Times New Roman', Times, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  @keyframes indeterminate {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(0%); }
+    100% { transform: translateX(100%); }
+  }
+  --animate-indeterminate: indeterminate 1.5s infinite linear;
+}
+
+[data-theme='dark'] {
+  --color-surface: #111111;
+  --color-surface-elevated: #18181b;
+  --color-surface-muted: #27272a;
+  --color-surface-sunken: #09090b;
+  --color-border: #27272a;
+  --color-border-strong: #3f3f46;
+  --color-fg: #f4f4f5;
+  --color-fg-muted: #a1a1aa;
+  --color-fg-subtle: #71717a;
+  --color-accent: #3b82f6;
+  --color-accent-soft: rgba(59, 130, 246, 0.1);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-fg);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  font-family: var(--font-sans);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.font-serif-display {
+  font-family: var(--font-sans);
+}
+
+/* Premium Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.2);
+  border-radius: 99px;
+  transition: background 0.2s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 120, 0.4);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+

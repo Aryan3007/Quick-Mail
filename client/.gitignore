@@ -1,0 +1,7 @@
+node_modules
+dist
+out
+.mcp.json
+*.env
+*.env.local
+ 

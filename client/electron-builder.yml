@@ -1,0 +1,23 @@
+appId: com.quikmail.app
+productName: QuikMail
+directories:
+  buildResources: build
+  output: dist
+files:
+  - out/**/*
+mac:
+  target:
+    - dmg
+    - zip
+  artifactName: ${name}-${version}-${arch}.${ext}
+win:
+  target:
+    - nsis
+    - zip
+  artifactName: ${name}-${version}-setup.${ext}
+linux:
+  target:
+    - AppImage
+    - deb
+  artifactName: ${name}-${version}.${ext}
+  category: Office
